@@ -19,16 +19,20 @@
 
 	if ($result->num_rows > 0) 
 	{
+		echo "<table>";
 	    while($row = $result->fetch_assoc()) 
 	    {
-	        echo '<pre>' . $row["id_users"] . "\t".  $row["name"]. "\t". $row["surname"]. "\t". $row["status"]. "<br>" . '</pre>';
+	    	echo "<tr>";
+	        echo '<td>'. $row["id_users"] ."</td><td>". $row["name"] ."</td><td>". $row["surname"] ."</td><td>". $row["status"]. "</td>";
+	        echo "</tr>";
 	    }
+	    echo "</table>";
 	} 
-		else 
-		{
-	    echo "0 results";
-		}
+	else 
+	{
+    	echo "0 results";
+	}
 
-	echo '<pre>';
-	print_r($conn);
+	//echo '<pre>';
+	//var_dump($conn);
 ?> 
